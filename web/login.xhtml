@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <title>Login</title>
+        <link rel="stylesheet" href="pages/vendors/iconfonts/mdi/css/materialdesignicons.min.css"/>
+        <link rel="stylesheet" href="pages/vendors/css/vendor.bundle.base.css"/>
+        <link rel="stylesheet" href="pages/vendors/css/vendor.bundle.addons.css"/>
+        <link rel="stylesheet" href="pages/css/style.css"/>
+        <!-- endinject -->
+        <!-- Favicon  -->
+        <link rel="icon" href="pages/img/core-img/favicon.ico"/>
+        
+    </h:head>
+    <h:body>
+        <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+            <a class="nav-brand" href="index.html"><img src="./uploads/logo/#{ownerUIModel.setup.logo}" alt="" style="width: 40px; height: 40px;"/></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-center" style="padding-left: 700px;" id="navbarSupportedContent">
+
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="faces/index.xhtml"><strong>Product</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="faces/infidele.xhtml" ><strong>Dishonest People</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="faces/about.xhtml" ><strong>About Us</strong></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <strong>Add Yours</strong>
+                        </a>
+                        <div class="dropdown-menu">
+                            <p:growl />
+                            <h:form class="px-4 py-3">
+                                <div class="form-group">
+                                    <label for="exampleDropdownFormEmail1">Username</label>
+                                    <h:inputText class="form-control" value="#{userModel.username}" id="exampleDropdownFormEmail1" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleDropdownFormPassword1">Password</label>
+                                    <h:inputSecret class="form-control" value="#{userModel.password}" id="exampleDropdownFormPassword1" />
+                                </div>
+                                <h:commandButton action="#{userModel.login()}" class="btn btn-primary" value="Sign In"></h:commandButton>
+                            </h:form>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/faces/register.xhtml">New around here? Sign up</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container-scroller">
+            <div class="container-fluid page-body-wrapper full-page-wrapper auth-page">
+                <div class="content-wrapper d-flex align-items-center auth auth-bg-1 theme-one">
+                    <div class="row w-100">
+                        <div class="col-lg-4 mx-auto">
+                            <div class="auto-form-wrapper">
+                                <h:form >
+                                    <p:growl />
+                                    <div class="form-group">
+                                        <label class="label">Username</label>
+                                        <div class="input-group">
+                                            <h:inputText class="form-control" value="#{userModel.username}"/>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                        <i class="mdi mdi-check-circle-outline"></i>
+                                                    </span>
+                                                </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="label">Password</label>
+                                        <div class="input-group">
+                                            <h:inputSecret class="form-control" value="#{userModel.password}" />
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                        <i class="mdi mdi-check-circle-outline"></i>
+                                                    </span>
+                                                </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <h:commandButton class="btn btn-primary submit-btn btn-block" action="#{userModel.login()}" value="Login"/>
+                                        <!--<button class="btn btn-primary submit-btn btn-block">Login</button>-->
+                                    </div>
+                                    
+                                    
+                                    <div class="text-block text-center my-3">
+                                        <span class="text-small font-weight-semibold">Not a member ?</span>
+                                        <a href="signup.xhtml" class="text-black text-small">Create new account</a>
+                                    </div>
+                                </h:form>
+                            </div>
+                            
+                            <p class="footer-text text-center">copyright © 2019 All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- content-wrapper ends -->
+            </div>
+            <!-- page-body-wrapper ends -->
+        </div>
+        <!-- container-scroller -->
+        <!-- plugins:js -->
+        <script src="pages/vendors/js/vendor.bundle.base.js"></script>
+        <script src="pages/vendors/js/vendor.bundle.addons.js"></script>
+        <!-- endinject -->
+        <!-- Plugin js for this page-->
+        <!-- End plugin js for this page-->
+        <!-- inject:js -->
+        <script src="pages/js/off-canvas.js"></script>
+        <script src="pages/js/misc.js"></script>
+        <!-- endinject -->
+        <!-- Custom js for this page-->
+        <script src="pages/js/dashboard.js"></script>
+        <!-- End custom js for this page-->
+    </h:body>
+</html>
+
